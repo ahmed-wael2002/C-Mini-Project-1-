@@ -1,0 +1,44 @@
+/*
+ ============================================================================
+ Name        : Mini1.c
+ Author      : Ahmed Wael
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Mini-Project (1)
+ ============================================================================
+ */
+
+#include <stdio.h>
+
+int main(void){
+	char main_menu_op;
+	char operation_loop = 1;
+
+	// Main Menu operation
+	while (operation_loop){
+		printf("Enter code of operations\n");
+		printf("a. Turn on the vehicle engine\n");
+		printf("b. Turn off the vehicle engine\n");
+		printf("c. Quit the system\n\n");
+		fflush(stdout);
+		scanf(" %c", &main_menu_op);
+
+		switch(main_menu_op){
+			case 'a':
+				printf("Vehicle engine is turned on!\n");
+				operation_loop = 0;
+				break;
+			case 'b':
+				printf("Vehicle engine is turned off!\n");
+				operation_loop = 1;
+				break;
+			case 'c':
+				printf("Quitting System...\n");
+				return 1;
+			default:
+				printf("Invalid operation code\n");
+				operation_loop = 1;
+		}
+	}
+	return 0;
+}

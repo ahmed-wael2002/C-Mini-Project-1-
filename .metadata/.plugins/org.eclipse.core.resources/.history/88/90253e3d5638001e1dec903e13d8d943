@@ -1,0 +1,95 @@
+/*
+ ============================================================================
+ Name        : 2.c
+ Author      : Ahmed Wael
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define WITH_ENGINE_TEMPERATURE_CONTROLLER
+
+// Vehicle Declaration
+enum State {OFF, ON};
+struct Vehicle {
+	enum State engine;
+	enum State ac;
+	char speed;
+	float room_temp;
+	float engine_temp;
+
+	#ifdef WITH_ENGINE_TEMPERATURE_CONTROLLER
+	enum State engine_temp_controller;
+	#endif
+}v;
+
+// Function Declaration
+int turn_on_engine(void);
+
+int main(void) {
+	char op;
+	while(1){
+		printf("a. Turn on the engine\n");
+		printf("b. Turn off the engine\n");
+		printf("c. Quit the system\n");
+		fflush(stdout);
+		scanf(" %c", &op);
+		switch(op){
+		case'a':
+		case'A':
+			int res = turn_on_engine();
+			if (res==1)
+				return 102;
+			break;
+
+		case'b':
+		case'B':
+			break;
+
+		case'c':
+		case'C':
+			return 101;
+
+		default:
+			printf("--Invalid Main Menu Operation!\n");
+		}
+	}
+	return 0;
+}
+
+int turn_on_engine(void){
+	printf("a. Turn off the engine\n");
+	printf("b. Set the traffic color\n");
+	printf("c. Set the room temperature\n");
+	printf("d. Set the engine temperature\n");
+	fflush(stdout);
+
+	char op;
+	scanf(" %c", &op);
+	switch(op){
+	case'a':
+	case'A':
+		return 0;
+		break;
+
+	case'b':
+	case'B':
+		break;
+
+	case'c':
+	case'C':
+		break;
+
+	case'd':
+	case'D':
+		break;
+
+	default:
+		printf("--Invalid Sensors Menu Operation\n");
+	}
+
+}

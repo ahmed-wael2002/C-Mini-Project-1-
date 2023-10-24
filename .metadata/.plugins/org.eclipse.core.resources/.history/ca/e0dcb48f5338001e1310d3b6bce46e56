@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Name        : 2.c
+ Author      : Ahmed Wael
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	char op;
+	while(1){
+		printf("a. Turn on the engine\n");
+		printf("b. Turn off the engine\n");
+		printf("c. Quit the system\n");
+
+		scanf(" %c", &op);
+		switch(op){
+		case'a':
+		case'A':
+			break;
+
+		case'b':
+		case'B':
+			break;
+
+		case'c':
+		case'C':
+			return 101;
+
+		default:
+			printf("--Invalid Main Menu Operation!\n");
+		}
+	}
+}
+
+void turn_on_engine(){
+	printf("a. Turn off the engine\n");
+	printf("b. Set the traffic color\n");
+	printf("c. Set the room temperature\n");
+	printf("d. Set the engine temperature\n");
+
+}

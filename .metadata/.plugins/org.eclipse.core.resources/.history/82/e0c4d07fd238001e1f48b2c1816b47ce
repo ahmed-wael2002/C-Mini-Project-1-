@@ -1,0 +1,205 @@
+/*
+ ============================================================================
+ Name        : 2.c
+ Author      : Ahmed Wael
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Mini-Project (1) - Vehicle Sensors
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define WITH_ENGINE_TEMPERATURE_CONTROLLER
+
+// Vehicle Declaration
+enum State {OFF, ON};
+struct Vehicle {
+	enum State engine;
+	enum State ac;
+	char speed;
+	float room_temp;
+	float engine_temp;
+
+	#ifdef WITH_ENGINE_TEMPERATURE_CONTROLLER
+	enum State engine_temp_controller;
+	#endif
+}v;
+
+// Function Declaration
+void turn_on_engine(void);
+void set_traffic_color(void);
+void show_vehicle_status(void);
+void set_room_temperature(void);
+void set_engine_temperature(void);
+void speed_30 (void);
+
+int main(void) {
+	// Vehicle initialization
+	v.engine = OFF;
+	v.ac = OFF;
+	v.speed = 35;
+	v.room_temp = 32.5;
+	v.engine_temp = 122.5;
+	speed_30();
+
+	char op;
+	while(1){
+		printf("a. Turn on the engine\n");
+		printf("b. Turn off the engine\n");
+		printf("c. Quit the system\n");
+		fflush(stdout);
+		scanf(" %c", &op);
+		switch(op){
+		case'a':
+		case'A':
+			printf("--Turning on the engine\n");
+			v.engine = ON;
+			turn_on_engine();
+			break;
+
+		case'b':
+		case'B':
+			printf("--Turning off the engine\n");
+			v.engine = OFF;
+			break;
+
+		case'c':
+		case'C':
+			printf("--Quitting the system\n");
+			return 101;
+
+		default:
+			printf("--Invalid Main Menu Operation!\n");
+		}
+	}
+	return 0;
+}
+
+void turn_on_engine(void){
+	while (1){
+		printf("\na. Turn off the engine\n");
+		printf("b. Set the traffic color\n");
+		printf("c. Set the room temperature\n");
+		printf("d. Set the engine temperature\n");
+		fflush(stdout);
+
+		char op;
+		scanf(" %c", &op);
+		switch(op){
+		case'a':
+		case'A':
+			v.engine = OFF;
+			printf("-- Turning off the engine\n");
+			return;
+
+		case'b':
+		case'B':
+			set_traffic_color();
+			break;
+
+		case'c':
+		case'C':
+			set_room_temperature();
+			break;
+
+		case'd':
+		case'D':
+			#ifdef WITH_ENGINE_TEMPERATURE_CONTROLLER
+				set_engine_temperature();
+			#else
+				printf("--Engine Temperature Controller is disabled\n");
+			#endif
+			break;
+
+		default:
+			printf("--Invalid Sensors Menu Operation\n");
+		}
+	}
+
+}
+
+	void set_traffic_color(void){
+		char color;
+		printf("Enter required color: ");
+		fflush(stdout);
+		scanf(" %c", &color);
+
+		switch(color){
+		case'g':
+		case'G':
+			v.speed = 100;
+			break;
+
+		case'r':
+		case'R':
+			v.speed = 0;
+			break;
+
+		case'o':
+		case'O':
+			v.speed = 30;
+			speed_30();
+			break;
+
+		default:
+			printf("--Invalid Color Selection\n");
+		}
+		show_vehicle_status();
+	}
+
+	void show_vehicle_status(void){
+		(v.engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+		(v.ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+		printf("Vehicle Speed: %d Km/hr\n", v.speed);
+		printf("Room Temperature: %f C\n", v.room_temp);
+		printf("Engine Temperature: %f C\n", v.engine_temp);
+
+		#ifdef WITH_ENGINE_TEMPERATURE_CONTROLLER
+		(v.engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+									   :printf("Engine Temperature Controller is OFF\n");
+		#endif
+	}
+
+	void set_room_temperature(void){
+		float temp;
+		printf("Enter room temperature: ");
+		fflush(stdout);
+		scanf("%f", &temp);
+
+		if (temp<10 || temp>30){
+			v.ac = ON;
+			v.room_temp = 20;
+		}
+		else{
+			v.ac = OFF;
+		}
+	}
+
+	void set_engine_temperature(void){
+		float temp;
+		printf("Enter engine temperature: ");
+		fflush(stdout);
+		scanf("%f", &temp);
+
+		if (temp<100 || temp>150){
+			v.engine_temp_controller = ON;
+			v.engine_temp = 125;
+		}
+		else{
+			v.engine_temp_controller = OFF;
+		}
+	}
+
+	void speed_30 (void){
+		if (v.ac == OFF)
+			v.ac = ON;
+		v.room_temp = v.room_temp * (5/4) + 1;
+
+		#ifdef WITH_ENGINE_TEMPERATURE_CONTROLLER
+		if (v.engine_temp_controller == OFF)
+			v.engine_temp_controller = ON;
+		v.engine_temp = v.engine_temp * (5/4) + 1;
+		#endif
+	}

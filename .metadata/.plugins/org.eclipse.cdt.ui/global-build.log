@@ -1,0 +1,2852 @@
+21:39:43 **** Rebuild of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+21:40:31 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for Mini1
+15:03:51 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c:16:27: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   16 |         enum state engine = OFF;
+      |                           ^
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:31:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   31 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'get_vehicle_status':
+..\src\Mini1.c:39:10: error: 'struct vehicle' has no member named 'engine'
+   39 |         v->engine==1? printf("Engine is ON\n")
+      |          ^~
+..\src\Mini1.c:43:10: error: 'struct vehicle' has no member named 'ac'
+   43 |         v->ac==1? printf("AC is ON\n")
+      |          ^~
+..\src\Mini1.c:47:47: error: 'struct vehicle' has no member named 'speed'
+   47 |         printf("Vehicle Speed:\t%d Km/hr\n", v->speed);
+      |                                               ^~
+..\src\Mini1.c:50:46: error: 'struct vehicle' has no member named 'room_temp'
+   50 |         printf("Room Temperature:\t%d C\n", v->room_temp);
+      |                                              ^~
+..\src\Mini1.c:53:10: error: 'struct vehicle' has no member named 'engine_temp_controller'
+   53 |         v->engine_temp_controller==1? printf("Engine Temperature Controller is ON\n")
+      |          ^~
+..\src\Mini1.c:57:50: error: 'struct vehicle' has no member named 'engine_temp'
+   57 |         printf("Engine Temperature:\t%d C\n\n", v->engine_temp);
+      |                                                  ^~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:33: error: too many arguments to function 'show_sensors_set'
+   78 |                                 show_sensors_set(&v);
+      |                                 ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: declared here
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:97:6: error: conflicting types for 'show_sensors_set'; have 'void(struct vehicle *)'
+   97 | void show_sensors_set (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: previous declaration of 'show_sensors_set' with type 'void(void)'
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:98:14: error: 'struct vehicle' has no member named 'engine'
+   98 |         if (v->engine==0)
+      |              ^~
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:17: warning: implicit declaration of function 'set_traffic_light' [-Wimplicit-function-declaration]
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:142:6: warning: conflicting types for 'set_traffic_light'; have 'void(struct vehicle *, char *)'
+  142 | void set_traffic_light(struct vehicle *v, char *op){
+      |      ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:121:17: note: previous implicit declaration of 'set_traffic_light' with type 'void(struct vehicle *, char *)'
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:143:16: error: switch quantity not an integer
+  143 |         switch(op){
+      |                ^~
+..\src\Mini1.c:146:18: error: 'struct vehicle' has no member named 'speed'
+  146 |                 v->speed = 100;
+      |                  ^~
+..\src\Mini1.c:151:18: error: 'struct vehicle' has no member named 'speed'
+  151 |                 v->speed = 30;
+      |                  ^~
+..\src\Mini1.c:156:18: error: 'struct vehicle' has no member named 'speed'
+  156 |                 v->speed = 0;
+      |                  ^~
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:173:18: error: 'struct vehicle' has no member named 'ac'
+  173 |                 v->ac = ON;
+      |                  ^~
+..\src\Mini1.c:174:18: error: 'struct vehicle' has no member named 'room_temp'
+  174 |                 v->room_temp = 20;
+      |                  ^~
+..\src\Mini1.c:177:18: error: 'struct vehicle' has no member named 'ac'
+  177 |                 v->ac = OFF;
+      |                  ^~
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:188:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  188 |                 v->engine_temp_controller = ON;
+      |                  ^~
+..\src\Mini1.c:189:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  189 |                 v->engine_temp_controller = 125;
+      |                  ^~
+..\src\Mini1.c:192:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  192 |                 v->engine_temp_controller = OFF;
+      |                  ^~
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+15:05:57 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c:16:27: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   16 |         enum state engine = 0;
+      |                           ^
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:31:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   31 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'get_vehicle_status':
+..\src\Mini1.c:39:10: error: 'struct vehicle' has no member named 'engine'
+   39 |         v->engine==1? printf("Engine is ON\n")
+      |          ^~
+..\src\Mini1.c:43:10: error: 'struct vehicle' has no member named 'ac'
+   43 |         v->ac==1? printf("AC is ON\n")
+      |          ^~
+..\src\Mini1.c:47:47: error: 'struct vehicle' has no member named 'speed'
+   47 |         printf("Vehicle Speed:\t%d Km/hr\n", v->speed);
+      |                                               ^~
+..\src\Mini1.c:50:46: error: 'struct vehicle' has no member named 'room_temp'
+   50 |         printf("Room Temperature:\t%d C\n", v->room_temp);
+      |                                              ^~
+..\src\Mini1.c:53:10: error: 'struct vehicle' has no member named 'engine_temp_controller'
+   53 |         v->engine_temp_controller==1? printf("Engine Temperature Controller is ON\n")
+      |          ^~
+..\src\Mini1.c:57:50: error: 'struct vehicle' has no member named 'engine_temp'
+   57 |         printf("Engine Temperature:\t%d C\n\n", v->engine_temp);
+      |                                                  ^~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:33: error: too many arguments to function 'show_sensors_set'
+   78 |                                 show_sensors_set(&v);
+      |                                 ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: declared here
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:97:6: error: conflicting types for 'show_sensors_set'; have 'void(struct vehicle *)'
+   97 | void show_sensors_set (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: previous declaration of 'show_sensors_set' with type 'void(void)'
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:98:14: error: 'struct vehicle' has no member named 'engine'
+   98 |         if (v->engine==0)
+      |              ^~
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:17: warning: implicit declaration of function 'set_traffic_light' [-Wimplicit-function-declaration]
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:142:6: warning: conflicting types for 'set_traffic_light'; have 'void(struct vehicle *, char *)'
+  142 | void set_traffic_light(struct vehicle *v, char *op){
+      |      ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:121:17: note: previous implicit declaration of 'set_traffic_light' with type 'void(struct vehicle *, char *)'
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:143:16: error: switch quantity not an integer
+  143 |         switch(op){
+      |                ^~
+..\src\Mini1.c:146:18: error: 'struct vehicle' has no member named 'speed'
+  146 |                 v->speed = 100;
+      |                  ^~
+..\src\Mini1.c:151:18: error: 'struct vehicle' has no member named 'speed'
+  151 |                 v->speed = 30;
+      |                  ^~
+..\src\Mini1.c:156:18: error: 'struct vehicle' has no member named 'speed'
+  156 |                 v->speed = 0;
+      |                  ^~
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:173:18: error: 'struct vehicle' has no member named 'ac'
+  173 |                 v->ac = ON;
+      |                  ^~
+..\src\Mini1.c:174:18: error: 'struct vehicle' has no member named 'room_temp'
+  174 |                 v->room_temp = 20;
+      |                  ^~
+..\src\Mini1.c:177:18: error: 'struct vehicle' has no member named 'ac'
+  177 |                 v->ac = OFF;
+      |                  ^~
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:188:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  188 |                 v->engine_temp_controller = ON;
+      |                  ^~
+..\src\Mini1.c:189:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  189 |                 v->engine_temp_controller = 125;
+      |                  ^~
+..\src\Mini1.c:192:18: error: 'struct vehicle' has no member named 'engine_temp_controller'
+  192 |                 v->engine_temp_controller = OFF;
+      |                  ^~
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+15:06:50 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:31:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   31 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:33: error: too many arguments to function 'show_sensors_set'
+   78 |                                 show_sensors_set(&v);
+      |                                 ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: declared here
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:97:6: error: conflicting types for 'show_sensors_set'; have 'void(struct vehicle *)'
+   97 | void show_sensors_set (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: previous declaration of 'show_sensors_set' with type 'void(void)'
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:17: warning: implicit declaration of function 'set_traffic_light' [-Wimplicit-function-declaration]
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:142:6: warning: conflicting types for 'set_traffic_light'; have 'void(struct vehicle *, char *)'
+  142 | void set_traffic_light(struct vehicle *v, char *op){
+      |      ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:121:17: note: previous implicit declaration of 'set_traffic_light' with type 'void(struct vehicle *, char *)'
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:143:16: error: switch quantity not an integer
+  143 |         switch(op){
+      |                ^~
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+17:47:43 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:31:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   31 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:33: error: too many arguments to function 'show_sensors_set'
+   78 |                                 show_sensors_set(&v);
+      |                                 ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: declared here
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:97:6: error: conflicting types for 'show_sensors_set'; have 'void(struct vehicle *)'
+   97 | void show_sensors_set (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c:26:6: note: previous declaration of 'show_sensors_set' with type 'void(void)'
+   26 | void show_sensors_set (void);
+      |      ^~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:17: warning: implicit declaration of function 'set_traffic_light' [-Wimplicit-function-declaration]
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:142:6: warning: conflicting types for 'set_traffic_light'; have 'void(struct vehicle *, char *)'
+  142 | void set_traffic_light(struct vehicle *v, char *op){
+      |      ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:121:17: note: previous implicit declaration of 'set_traffic_light' with type 'void(struct vehicle *, char *)'
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:143:16: error: switch quantity not an integer
+  143 |         switch(op){
+      |                ^~
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+17:48:50 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:31:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   31 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   78 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:17: warning: implicit declaration of function 'set_traffic_light' [-Wimplicit-function-declaration]
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:142:6: warning: conflicting types for 'set_traffic_light'; have 'void(struct vehicle *, char *)'
+  142 | void set_traffic_light(struct vehicle *v, char *op){
+      |      ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c:121:17: note: previous implicit declaration of 'set_traffic_light' with type 'void(struct vehicle *, char *)'
+  121 |                 set_traffic_light(&v, &op);
+      |                 ^~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:143:16: error: switch quantity not an integer
+  143 |         switch(op){
+      |                ^~
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+17:49:49 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:32:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   32 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:79:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:85:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:94:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   94 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:114:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char *op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:128:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:140:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  140 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:98:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   98 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:144:16: error: switch quantity not an integer
+  144 |         switch(op){
+      |                ^~
+..\src\Mini1.c:163:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  163 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:167:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  167 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:128:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:171:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  171 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:179:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:182:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  182 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:186:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  186 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:195:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  195 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+17:50:16 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:32:14: warning: unused variable 'main_menu' [-Wunused-variable]
+   32 |         char main_menu=1;
+      |              ^~~~~~~~~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:79:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:85:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:94:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   94 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:114:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:66:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   66 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  122 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:128:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:140:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  140 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:98:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   98 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:163:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  163 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:167:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  167 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:128:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:171:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  171 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:179:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:182:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  182 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:186:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  186 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:195:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  195 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:38:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   38 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+gcc -o Mini1.exe "src\\Mini1.o" 
+17:50:32 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:78:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   78 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:84:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:93:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   93 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:113:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  113 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  121 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:121:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  121 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:127:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:139:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  139 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:97:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   97 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:162:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  162 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:166:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  166 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:127:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  127 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:170:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  170 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:178:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  178 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:181:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  181 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:132:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  132 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:185:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  185 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:194:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  194 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+17:52:40 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:33:10: error: invalid type argument of '->' (have 'struct vehicle')
+   33 |         v->engine = OFF;
+      |          ^~
+..\src\Mini1.c:34:10: error: invalid type argument of '->' (have 'struct vehicle')
+   34 |         v->ac = OFF;
+      |          ^~
+..\src\Mini1.c:35:10: error: invalid type argument of '->' (have 'struct vehicle')
+   35 |         v->engine_temp_controller = OFF;
+      |          ^~
+..\src\Mini1.c:36:10: error: invalid type argument of '->' (have 'struct vehicle')
+   36 |         v->speed = 15;
+      |          ^~
+..\src\Mini1.c:37:10: error: invalid type argument of '->' (have 'struct vehicle')
+   37 |         v->room_temp = 15;
+      |          ^~
+..\src\Mini1.c:38:10: error: invalid type argument of '->' (have 'struct vehicle')
+   38 |         v->engine_temp = 100;
+      |          ^~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:84:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:90:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   90 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:99:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   99 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:119:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  119 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:127:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:127:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  127 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:138:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  138 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:145:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  145 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:103:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  103 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:168:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  168 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:172:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  172 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:176:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  176 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:184:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  184 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:187:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  187 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:138:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  138 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:191:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  191 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:200:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  200 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+17:53:04 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:84:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   84 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:90:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   90 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:99:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   99 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:119:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  119 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:71:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   71 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:127:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  127 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:127:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  127 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:138:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  138 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:145:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  145 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:103:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  103 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:168:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  168 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:172:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  172 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:176:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  176 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:184:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  184 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:187:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  187 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:138:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  138 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_engine_temperature':
+..\src\Mini1.c:191:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  191 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:200:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  200 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:43:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   43 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for Mini1
+Info: Nothing to build for Mini1
+19:34:45 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:79:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:85:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:94:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   94 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:114:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  122 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:128:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:140:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  140 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:98:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   98 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:163:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  163 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:167:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  167 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:128:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:171:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  171 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:179:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:182:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  182 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+19:43:08 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:79:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:85:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:94:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   94 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:114:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  122 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:128:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:140:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  140 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:98:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   98 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:163:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  163 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:167:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  167 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:128:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:171:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  171 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:179:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:182:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  182 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+gcc -o Mini1.exe "src\\Mini1.o" 
+19:43:21 **** Incremental Build of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:79:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:85:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   85 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:94:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+   94 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:114:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:65:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   65 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:122:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  122 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:128:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:140:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  140 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:98:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   98 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:163:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  163 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:167:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  167 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:128:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  128 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:171:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  171 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:179:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:37:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   37 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:182:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  182 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:133:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  133 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+gcc -o Mini1.exe "src\\Mini1.o" 
+Info: Nothing to build for Mini1
+19:48:17 **** Rebuild of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+..\src\ifdef trial.c: In function 'main':
+..\src\ifdef trial.c:17:7: error: no macro name given in #ifdef directive
+   17 | #ifdef
+      |       ^
+..\src\ifdef trial.c: At top level:
+..\src\ifdef trial.c:17: error: unterminated #else
+   17 | #ifdef
+      | 
+Info: Nothing to build for Mini1
+19:48:50 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+..\src\ifdef trial.c: In function 'main':
+..\src\ifdef trial.c:17:7: error: no macro name given in #ifdef directive
+   17 | #ifdef
+      |       ^
+Info: Nothing to build for Mini1
+19:49:06 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+19:49:33 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+..\src\ifdef trial.c:13:8: error: no macro name given in #define directive
+   13 | #define
+      |        ^
+Info: Nothing to build for Mini1
+19:49:40 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+19:51:00 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for Mini1
+19:51:06 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for Mini1
+19:52:03 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for Mini1
+19:52:08 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+Info: Nothing to build for Mini1
+19:52:48 **** Incremental Build of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+16:22:26 **** Rebuild of configuration Debug for project ifdef trial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ifdef trial.o" "..\\src\\ifdef trial.c" 
+gcc -o "ifdef trial.exe" "src\\ifdef trial.o" 
+16:22:30 **** Rebuild of configuration Debug for project Mini1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini1.o" "..\\src\\Mini1.c" 
+..\src\Mini1.c:31:6: warning: return type of 'main' is not 'int' [-Wmain]
+   31 | void main(void){
+      |      ^~~~
+..\src\Mini1.c: In function 'main':
+..\src\Mini1.c:49:26: error: invalid type argument of '->' (have 'struct vehicle')
+   49 |                         v->engine = ON;
+      |                          ^~
+..\src\Mini1.c: In function 'show_main_menu':
+..\src\Mini1.c:114:50: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |                                 show_sensors_set(&v);
+      |                                                  ^~
+      |                                                  |
+      |                                                  struct vehicle **
+..\src\Mini1.c:26:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   26 | void show_sensors_set (struct vehicle* v);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:120:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  120 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:100:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  100 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:129:48: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  129 |                                 show_main_menu(&v);
+      |                                                ^~
+      |                                                |
+      |                                                struct vehicle **
+..\src\Mini1.c:100:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  100 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'show_sensors_set':
+..\src\Mini1.c:149:32: warning: passing argument 1 of 'show_main_menu' from incompatible pointer type [-Wincompatible-pointer-types]
+  149 |                 show_main_menu(&v);
+      |                                ^~
+      |                                |
+      |                                struct vehicle **
+..\src\Mini1.c:100:37: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  100 | void show_main_menu(struct vehicle *v){
+      |                     ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:157:35: warning: passing argument 1 of 'set_traffic_light' from incompatible pointer type [-Wincompatible-pointer-types]
+  157 |                 set_traffic_light(&v, &op);
+      |                                   ^~
+      |                                   |
+      |                                   struct vehicle **
+..\src\Mini1.c:28:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c:157:39: warning: passing argument 2 of 'set_traffic_light' makes integer from pointer without a cast [-Wint-conversion]
+  157 |                 set_traffic_light(&v, &op);
+      |                                       ^~~
+      |                                       |
+      |                                       char *
+..\src\Mini1.c:28:48: note: expected 'char' but argument is of type 'char *'
+   28 | void set_traffic_light(struct vehicle *v, char op);
+      |                                           ~~~~~^~
+..\src\Mini1.c:163:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+  163 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:168:17: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+  168 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:175:26: warning: passing argument 1 of 'show_sensors_set' from incompatible pointer type [-Wincompatible-pointer-types]
+  175 |         show_sensors_set(&v);
+      |                          ^~
+      |                          |
+      |                          struct vehicle **
+..\src\Mini1.c:133:40: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+  133 | void show_sensors_set (struct vehicle *v){
+      |                        ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: In function 'set_traffic_light':
+..\src\Mini1.c:198:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  198 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:72:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   72 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:202:6: warning: conflicting types for 'set_room_temperature'; have 'void(struct vehicle *)'
+  202 | void set_room_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:163:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(struct vehicle *)'
+  163 |                 set_room_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c: In function 'set_room_temperature':
+..\src\Mini1.c:206:17: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'char *' [-Wformat=]
+  206 |         scanf("%d", &temp);
+      |                ~^   ~~~~~
+      |                 |   |
+      |                 |   char *
+      |                 int *
+      |                %hhd
+..\src\Mini1.c:214:28: warning: passing argument 1 of 'get_vehicle_status' from incompatible pointer type [-Wincompatible-pointer-types]
+  214 |         get_vehicle_status(&v);
+      |                            ^~
+      |                            |
+      |                            struct vehicle **
+..\src\Mini1.c:72:41: note: expected 'struct vehicle *' but argument is of type 'struct vehicle **'
+   72 | void get_vehicle_status(struct vehicle* v){
+      |                         ~~~~~~~~~~~~~~~~^
+..\src\Mini1.c: At top level:
+..\src\Mini1.c:217:6: warning: conflicting types for 'set_engine_temperature'; have 'void(struct vehicle *)'
+  217 | void set_engine_temperature (struct vehicle *v){
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\Mini1.c:168:17: note: previous implicit declaration of 'set_engine_temperature' with type 'void(struct vehicle *)'
+  168 |                 set_engine_temperature(&v);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+Info: Nothing to build for Mini1
+16:27:45 **** Rebuild of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+16:29:13 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+16:30:50 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+16:30:53 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:30:59 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Mini1
+16:32:28 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+16:32:30 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+16:35:04 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+16:35:37 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+16:40:40 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+   82 | }
+      | ^
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+16:44:45 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:95:1: warning: control reaches end of non-void function [-Wreturn-type]
+   95 | }
+      | ^
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+17:08:29 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c:64:6: error: conflicting types for 'turn_on_engine'; have 'void()'
+   64 | void turn_on_engine(){
+      |      ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:31:5: note: previous declaration of 'turn_on_engine' with type 'int(void)'
+   31 | int turn_on_engine(void);
+      |     ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:76:18: error: invalid type argument of '->' (have 'struct Vehicle')
+   76 |                 v->engine = OFF;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:87:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:113:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  113 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:118:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  118 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:123:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  123 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:133:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  133 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:134:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  134 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:135:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  135 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:136:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  136 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:137:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  137 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:140:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  140 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:145:14: warning: conflicting types for 'set_room_temperature'; have 'void(void)'
+  145 |         void set_room_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:87:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(void)'
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:152:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  152 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:153:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  153 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:156:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  156 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:160:14: warning: conflicting types for 'set_engine_temperature'; have 'void(void)'
+  160 |         void set_engine_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: note: previous implicit declaration of 'set_engine_temperature' with type 'void(void)'
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:167:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  167 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:168:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  168 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:171:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  171 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+17:08:35 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c:64:6: error: conflicting types for 'turn_on_engine'; have 'void()'
+   64 | void turn_on_engine(){
+      |      ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:31:5: note: previous declaration of 'turn_on_engine' with type 'int(void)'
+   31 | int turn_on_engine(void);
+      |     ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:76:18: error: invalid type argument of '->' (have 'struct Vehicle')
+   76 |                 v->engine = OFF;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:87:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:113:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  113 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:118:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  118 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:123:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  123 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:133:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  133 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:134:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  134 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:135:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  135 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:136:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  136 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:137:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  137 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:140:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  140 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:145:14: warning: conflicting types for 'set_room_temperature'; have 'void(void)'
+  145 |         void set_room_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:87:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(void)'
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:152:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  152 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:153:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  153 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:156:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  156 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:160:14: warning: conflicting types for 'set_engine_temperature'; have 'void(void)'
+  160 |         void set_engine_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: note: previous implicit declaration of 'set_engine_temperature' with type 'void(void)'
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:167:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  167 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:168:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  168 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:171:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  171 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for ifdef trial
+17:08:40 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c:64:6: error: conflicting types for 'turn_on_engine'; have 'void()'
+   64 | void turn_on_engine(){
+      |      ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:31:5: note: previous declaration of 'turn_on_engine' with type 'int(void)'
+   31 | int turn_on_engine(void);
+      |     ^~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:76:18: error: invalid type argument of '->' (have 'struct Vehicle')
+   76 |                 v->engine = OFF;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:87:17: warning: implicit declaration of function 'set_room_temperature' [-Wimplicit-function-declaration]
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: warning: implicit declaration of function 'set_engine_temperature' [-Wimplicit-function-declaration]
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:113:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  113 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:118:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  118 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:123:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  123 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:133:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  133 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:134:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  134 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:135:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  135 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:136:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  136 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:137:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  137 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:140:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  140 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:145:14: warning: conflicting types for 'set_room_temperature'; have 'void(void)'
+  145 |         void set_room_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:87:17: note: previous implicit declaration of 'set_room_temperature' with type 'void(void)'
+   87 |                 set_room_temperature();
+      |                 ^~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:152:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  152 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:153:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  153 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:156:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  156 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: At top level:
+..\src\MiniProject 1 - V.2.c:160:14: warning: conflicting types for 'set_engine_temperature'; have 'void(void)'
+  160 |         void set_engine_temperature(void){
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c:93:25: note: previous implicit declaration of 'set_engine_temperature' with type 'void(void)'
+   93 |                         set_engine_temperature();
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:167:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  167 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:168:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  168 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:171:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  171 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for Mini1
+17:11:32 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:85:18: error: invalid type argument of '->' (have 'struct Vehicle')
+   85 |                 v->engine = OFF;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:122:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  122 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:127:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  127 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:132:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  132 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:142:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  142 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:143:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  143 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:144:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  144 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:145:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  145 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:146:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  146 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:149:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  149 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:161:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  161 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:162:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  162 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:165:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  165 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:176:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  176 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:177:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  177 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:180:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  180 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for ifdef trial
+17:11:35 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'turn_on_engine':
+..\src\MiniProject 1 - V.2.c:85:18: error: invalid type argument of '->' (have 'struct Vehicle')
+   85 |                 v->engine = OFF;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:122:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  122 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:127:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  127 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:132:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  132 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:142:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  142 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:143:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  143 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:144:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  144 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:145:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  145 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:146:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  146 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:149:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  149 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:161:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  161 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:162:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  162 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:165:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  165 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:176:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  176 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:177:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  177 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:180:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  180 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for Mini1
+17:12:03 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:122:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  122 |                         v->speed = 100;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:127:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  127 |                         v->speed = 0;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:132:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  132 |                         v->speed = 30;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:142:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  142 |                 (v->engine==ON)? printf("\nEngine is ON\n"):printf("\nEngine is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:143:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  143 |                 (v->ac==ON)?printf("AC is ON\n"):printf("AC is OFF\n");
+      |                   ^~
+..\src\MiniProject 1 - V.2.c:144:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  144 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:145:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  145 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:146:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  146 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:149:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  149 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_room_temperature':
+..\src\MiniProject 1 - V.2.c:161:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  161 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:162:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  162 |                         v->room_temp = 20;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:165:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  165 |                         v->ac = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:176:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  176 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:177:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  177 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:180:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  180 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+17:12:40 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:144:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  144 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:145:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  145 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:146:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  146 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:149:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  149 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:176:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  176 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:177:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  177 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:180:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  180 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for ifdef trial
+17:12:43 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'show_vehicle_status':
+..\src\MiniProject 1 - V.2.c:144:54: error: invalid type argument of '->' (have 'struct Vehicle')
+  144 |                 printf("Vehicle Speed: %d Km/hr\n", v->speed);
+      |                                                      ^~
+..\src\MiniProject 1 - V.2.c:145:53: error: invalid type argument of '->' (have 'struct Vehicle')
+  145 |                 printf("Room Temperature: %f C\n", v->room_temp);
+      |                                                     ^~
+..\src\MiniProject 1 - V.2.c:146:55: error: invalid type argument of '->' (have 'struct Vehicle')
+  146 |                 printf("Engine Temperature: %f C\n", v->engine_temp);
+      |                                                       ^~
+..\src\MiniProject 1 - V.2.c:149:19: error: invalid type argument of '->' (have 'struct Vehicle')
+  149 |                 (v->engine_temp_controller==ON)?printf("Engine Temperature Controller is ON\n")
+      |                   ^~
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:176:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  176 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:177:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  177 |                         v->engine_temp = 125;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:180:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  180 |                         v->engine_temp_controller = OFF;
+      |                          ^~
+Info: Nothing to build for Mini1
+17:13:08 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+17:13:11 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Mini1
+17:18:21 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+17:19:52 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+17:19:54 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+07:33:42 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:58:26: error: invalid type argument of '->' (have 'struct Vehicle')
+   58 |                         v->engine = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:65:26: error: invalid type argument of '->' (have 'struct Vehicle')
+   65 |                         v->engine = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'speed_30':
+..\src\MiniProject 1 - V.2.c:193:22: error: invalid type argument of '->' (have 'struct Vehicle')
+  193 |                 if (v->ac == OFF)
+      |                      ^~
+..\src\MiniProject 1 - V.2.c:194:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  194 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:195:18: error: invalid type argument of '->' (have 'struct Vehicle')
+  195 |                 v->room_temp = v->room_temp * (5/4) + 1;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:195:33: error: invalid type argument of '->' (have 'struct Vehicle')
+  195 |                 v->room_temp = v->room_temp * (5/4) + 1;
+      |                                 ^~
+..\src\MiniProject 1 - V.2.c:198:22: error: invalid type argument of '->' (have 'struct Vehicle')
+  198 |                 if (v->engine_temp_controller == OFF)
+      |                      ^~
+..\src\MiniProject 1 - V.2.c:199:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  199 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:200:18: error: invalid type argument of '->' (have 'struct Vehicle')
+  200 |                 v->engine_temp = v->engine_temp * (5/4) + 1;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:200:35: error: invalid type argument of '->' (have 'struct Vehicle')
+  200 |                 v->engine_temp = v->engine_temp * (5/4) + 1;
+      |                                   ^~
+Info: Nothing to build for ifdef trial
+07:33:44 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:58:26: error: invalid type argument of '->' (have 'struct Vehicle')
+   58 |                         v->engine = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:65:26: error: invalid type argument of '->' (have 'struct Vehicle')
+   65 |                         v->engine = OFF;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c: In function 'speed_30':
+..\src\MiniProject 1 - V.2.c:193:22: error: invalid type argument of '->' (have 'struct Vehicle')
+  193 |                 if (v->ac == OFF)
+      |                      ^~
+..\src\MiniProject 1 - V.2.c:194:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  194 |                         v->ac = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:195:18: error: invalid type argument of '->' (have 'struct Vehicle')
+  195 |                 v->room_temp = v->room_temp * (5/4) + 1;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:195:33: error: invalid type argument of '->' (have 'struct Vehicle')
+  195 |                 v->room_temp = v->room_temp * (5/4) + 1;
+      |                                 ^~
+..\src\MiniProject 1 - V.2.c:198:22: error: invalid type argument of '->' (have 'struct Vehicle')
+  198 |                 if (v->engine_temp_controller == OFF)
+      |                      ^~
+..\src\MiniProject 1 - V.2.c:199:26: error: invalid type argument of '->' (have 'struct Vehicle')
+  199 |                         v->engine_temp_controller = ON;
+      |                          ^~
+..\src\MiniProject 1 - V.2.c:200:18: error: invalid type argument of '->' (have 'struct Vehicle')
+  200 |                 v->engine_temp = v->engine_temp * (5/4) + 1;
+      |                  ^~
+..\src\MiniProject 1 - V.2.c:200:35: error: invalid type argument of '->' (have 'struct Vehicle')
+  200 |                 v->engine_temp = v->engine_temp * (5/4) + 1;
+      |                                   ^~
+Info: Nothing to build for Mini1
+07:34:12 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'speed_30':
+..\src\MiniProject 1 - V.2.c:194:25: error: 'vac' undeclared (first use in this function)
+  194 |                         vac. = ON;
+      |                         ^~~
+..\src\MiniProject 1 - V.2.c:194:25: note: each undeclared identifier is reported only once for each function it appears in
+..\src\MiniProject 1 - V.2.c:194:30: error: expected identifier before '=' token
+  194 |                         vac. = ON;
+      |                              ^
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+07:34:24 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+07:37:18 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+07:38:19 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+07:38:28 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Mini1
+07:38:35 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+07:38:37 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Mini1
+07:38:43 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+07:38:46 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Mini1
+07:41:59 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+23:03:16 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+23:05:40 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+23:05:45 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:06:01 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+23:10:48 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+23:10:51 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:10:56 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+23:12:37 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+23:15:36 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:145:36: error: 'a' undeclared (first use in this function)
+  145 |                         speed_30();a
+      |                                    ^
+..\src\MiniProject 1 - V.2.c:145:36: note: each undeclared identifier is reported only once for each function it appears in
+..\src\MiniProject 1 - V.2.c:145:37: error: expected ';' before 'break'
+  145 |                         speed_30();a
+      |                                     ^
+      |                                     ;
+  146 |                         break;
+      |                         ~~~~~        
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:188:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  188 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:192:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  192 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for ifdef trial
+23:15:40 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+..\src\MiniProject 1 - V.2.c: In function 'set_traffic_color':
+..\src\MiniProject 1 - V.2.c:145:36: error: 'a' undeclared (first use in this function)
+  145 |                         speed_30();a
+      |                                    ^
+..\src\MiniProject 1 - V.2.c:145:36: note: each undeclared identifier is reported only once for each function it appears in
+..\src\MiniProject 1 - V.2.c:145:37: error: expected ';' before 'break'
+  145 |                         speed_30();a
+      |                                     ^
+      |                                     ;
+  146 |                         break;
+      |                         ~~~~~        
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:188:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  188 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:192:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  192 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for Mini1
+23:15:53 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:188:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  188 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:192:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  192 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for ifdef trial
+23:15:56 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:188:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  188 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:192:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  192 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for Mini1
+23:16:35 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:190:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  190 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:194:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  194 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for ifdef trial
+23:16:38 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'set_engine_temperature':
+..\src\MiniProject 1 - V.2.c:190:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  190 |                         v.engine_temp_controller = ON;
+      |                          ^
+..\src\MiniProject 1 - V.2.c:194:26: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+  194 |                         v.engine_temp_controller = OFF;
+      |                          ^
+Info: Nothing to build for Mini1
+23:17:32 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+Info: Nothing to build for ifdef trial
+23:17:35 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+..\src\MiniProject 1 - V.2.c: In function 'main':
+..\src\MiniProject 1 - V.2.c:45:10: error: 'struct Vehicle' has no member named 'engine_temp_controller'
+   45 |         v.engine_temp_controller = OFF;
+      |          ^
+Info: Nothing to build for Mini1
+23:18:00 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for Mini1
+23:18:38 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MiniProject 1 - V.2.o" "..\\src\\MiniProject 1 - V.2.c" 
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for ifdef trial
+23:18:41 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file MiniProject 1 - V.2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:18:49 **** Incremental Build of configuration Debug for project MiniProject 1 - V.2 ****
+Info: Internal Builder is used for build
+gcc -o "MiniProject 1 - V.2.exe" "src\\MiniProject 1 - V.2.o" 
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
+Info: Nothing to build for Mini1
+Info: Nothing to build for MiniProject 1 - V.2
+Info: Nothing to build for ifdef trial
